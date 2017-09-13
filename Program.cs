@@ -30,11 +30,21 @@ namespace theRealAreaCalculator
             // This computes the perimeter and area
             double s = ((a + b + c) / 2);
             double perimeter = (a + b + c);
-            double area = (Math.Sqrt(s * (s-a) * (s-b) * (s-c)));
+            double area = (s * (s-a) * (s-b) * (s-c));
 
-            // this prints the result
-			Console.WriteLine("The perimeter is {0}\nThe area is {1}", perimeter, area);
-			Console.ReadKey();
-		}
+            //this tells you whether its a triangle
+            if (area > 0)
+            {
+                area = Math.Sqrt(area);
+                Console.WriteLine("The perimeter is {0}\nThe area is {1}", perimeter, area);
+                Console.ReadKey();
+            }
+            // this prints if its not a triangle
+            else
+            {
+                Console.WriteLine("Not a Triangle");
+                Console.ReadKey();
+            }
+           }
 	}
 }
